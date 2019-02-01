@@ -31,9 +31,14 @@ public class Recursion{
      */
 
     public static int fib(int n){
-
+      return FibHelper(n, 0, 1);
     }
-    
+
+    private static int FibHelper(int n, int first, int next) {
+      if (n == 0) return next;
+      if (n == 1) return next;
+      return FibHelper(n-1, next, first + next);
+    }
     /*As Per classwork*/
   /*
     public static ArrayList<Integer> makeAllSums(){
@@ -41,7 +46,7 @@ public class Recursion{
     }
   */
   public static void main(String[] args) {
-    System.out.println("--------TESTING SQRT METHOD----------")
+    System.out.println("--------TESTING SQRT METHOD----------");
     System.out.println(sqrt(1,0.00000000001));
     System.out.println(sqrt(0,0.00000000001));
     System.out.println(sqrt(4,0.00000000001));
@@ -49,5 +54,10 @@ public class Recursion{
     System.out.println(sqrt(400,0.00000000001));
     System.out.println(sqrt(32,0.00000000001));
     System.out.println(sqrt(0.25,0.00000000001));
+    System.out.println("--------TESTING FIB METHOD----------");
+    System.out.println(fib(0));
+    System.out.println(fib(1));
+    System.out.println(fib(5));
+
   }
 }
