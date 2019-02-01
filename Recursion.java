@@ -6,16 +6,22 @@ public class Recursion{
      *precondition: n is non-negative
 
     */
-    public static double sqrt(double n, double tolerance){
+    public static double sqrt(double n, double tolerance) {
+      // calling private helper method + giving input random guess
       return sqrtHelper(n, 1, tolerance);
     }
 
     private static double sqrtHelper(double n, double g, double tolerance) {
-      if (n == 0){
+      // base case of 0
+      if (n == 0) {
         return 0;
-      } else if (((g*g - n ) / n ) <= tolerance) {
+      } double error = ((g * g - n ) / n );
+        if (error < 0) error *= -1;
+       if ( error <= tolerance) {
+        // sees the percent error as compared to the tolerance (this is if satisfactory)
         return g;
       }
+      // calling recursive step
       return sqrtHelper(n, ((n/g +g)/2), tolerance);
     }
     /*Recursively find the n'th fibbonaci number in linear time
@@ -33,4 +39,7 @@ public class Recursion{
 
     }
   */
+  public static void main(String[] args) {
+    System.out.println(sqrt(1,0.00000000001));
+  }
 }
