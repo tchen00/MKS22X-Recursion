@@ -24,15 +24,16 @@ public class Recursion{
       // calling recursive step
       return sqrtHelper(n, ((n/g +g)/2), tolerance);
     }
+
     /*Recursively find the n'th fibbonaci number in linear time
      *fib(0) = 1; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
      */
-    /*
+
     public static int fib(int n){
 
     }
-    */
+    
     /*As Per classwork*/
   /*
     public static ArrayList<Integer> makeAllSums(){
@@ -40,6 +41,13 @@ public class Recursion{
     }
   */
   public static void main(String[] args) {
+    System.out.println("--------TESTING SQRT METHOD----------")
     System.out.println(sqrt(1,0.00000000001));
+    System.out.println(sqrt(0,0.00000000001));
+    System.out.println(sqrt(4,0.00000000001));
+    System.out.println(sqrt(9,0.00000000001));
+    System.out.println(sqrt(400,0.00000000001));
+    System.out.println(sqrt(32,0.00000000001));
+    System.out.println(sqrt(0.25,0.00000000001));
   }
 }
