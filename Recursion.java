@@ -37,23 +37,29 @@ public class Recursion{
     }
 
     private static int FibHelper(int n, int first, int next) {
+      //base cases of 0 and 1
       if (n == 0) return first;
       if (n == 1) return next;
+      //calling recursive call
       return FibHelper(n-1, next, first + next);
     }
     /*As Per classwork*/
 
     public static ArrayList<Integer> makeAllSums(int n){
-      ArrayList<Integer> ans = new ArrayList<>();
-      sumsHelper(n, 0, ans);
-      return ans;
+      // create new arraylist to return later
+      ArrayList<Integer> output = new ArrayList<>();
+      // calling helper method
+      sumsHelper(n, 0, output);
+      return output;
     }
 
-    public static void sumsHelper(int n, int ans, List<Integer> list){
-      if (n == 0) list.add(ans);
+    public static void sumsHelper(int n, int output, List<Integer> list){
+      //if there are no more numbers to add --> will let the list add output
+      if (n == 0) list.add(output);
       else {
-        sumsHelper(n - 1, ans + n, list);
-        sumsHelper(n - 1, ans, list);
+        // two ways to branch -- add n or not add n (shown from class)
+        sumsHelper(n - 1, output + n, list);
+        sumsHelper(n - 1, output, list);
       }
     }
 
@@ -70,8 +76,12 @@ public class Recursion{
     System.out.println(fib(0));
     System.out.println(fib(1));
     System.out.println(fib(5));
+    System.out.println(fib(100));
     System.out.println("--------TESTING MAKE ALL SUMS METHOD----------");
     System.out.println(""+ makeAllSums(2));
+    System.out.println(""+ makeAllSums(3));
+    System.out.println(""+ makeAllSums(4));
+
 
   }
 }
