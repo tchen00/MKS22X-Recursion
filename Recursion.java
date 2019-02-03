@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Recursion{
     /*You may write additional private methods */
 
@@ -26,7 +28,7 @@ public class Recursion{
     }
 
     /*Recursively find the n'th fibbonaci number in linear time
-     *fib(0) = 1; fib(1) = 1; fib(5) = 5
+     *fib(0) = 0; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
      */
 
@@ -35,16 +37,26 @@ public class Recursion{
     }
 
     private static int FibHelper(int n, int first, int next) {
-      if (n == 0) return next;
+      if (n == 0) return first;
       if (n == 1) return next;
       return FibHelper(n-1, next, first + next);
     }
     /*As Per classwork*/
-  /*
-    public static ArrayList<Integer> makeAllSums(){
 
+    public static ArrayList<Integer> makeAllSums(int n){
+      ArrayList<Integer> ans = new ArrayList<>();
+      sumsHelper(n, 0, ans);
+      return ans;
     }
-  */
+
+    public static void sumsHelper(int n, int ans, List<Integer> list){
+      if (n == 0) list.add(ans);
+      else {
+        sumsHelper(n - 1, ans + n, list);
+        sumsHelper(n - 1, ans, list);
+      }
+    }
+
   public static void main(String[] args) {
     System.out.println("--------TESTING SQRT METHOD----------");
     System.out.println(sqrt(1,0.00000000001));
@@ -58,6 +70,8 @@ public class Recursion{
     System.out.println(fib(0));
     System.out.println(fib(1));
     System.out.println(fib(5));
+    System.out.println("--------TESTING MAKE ALL SUMS METHOD----------");
+    System.out.println(""+ makeAllSums(2));
 
   }
 }
