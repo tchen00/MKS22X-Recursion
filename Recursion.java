@@ -62,26 +62,26 @@ public class Recursion{
         sumsHelper(n - 1, output, list);
       }
     }
-
-  public static void main(String[] args) {
-    System.out.println("--------TESTING SQRT METHOD----------");
-    System.out.println(sqrt(1,0.00000000001));
-    System.out.println(sqrt(0,0.00000000001));
-    System.out.println(sqrt(4,0.00000000001));
-    System.out.println(sqrt(9,0.00000000001));
-    System.out.println(sqrt(400,0.00000000001));
-    System.out.println(sqrt(32,0.00000000001));
-    System.out.println(sqrt(0.25,0.00000000001));
-    System.out.println("--------TESTING FIB METHOD----------");
-    System.out.println(fib(0));
-    System.out.println(fib(1));
-    System.out.println(fib(5));
-    System.out.println(fib(100));
-    System.out.println("--------TESTING MAKE ALL SUMS METHOD----------");
-    System.out.println(""+ makeAllSums(2));
-    System.out.println(""+ makeAllSums(3));
-    System.out.println(""+ makeAllSums(4));
-
-
-  }
+/*
+    public static void main(String[] args) {
+      System.out.println("--------TESTING SQRT METHOD----------");
+      System.out.println(sqrt(1,0.00000000001));
+      System.out.println(sqrt(0,0.00000000001));
+      System.out.println(sqrt(4,0.00000000001));
+      System.out.println(sqrt(9,0.00000000001));
+      System.out.println(sqrt(400,0.00000000001));
+      System.out.println(sqrt(32,0.00000000001));
+      System.out.println(sqrt(0.25,0.00000000001));
+      System.out.println("--------TESTING FIB METHOD----------");
+      System.out.println(fib(0));
+      System.out.println(fib(1));
+      System.out.println(fib(5));
+      System.out.println(fib(9));
+      System.out.println("--------TESTING MAKE ALL SUMS METHOD----------");
+      System.out.println(""+ makeAllSums(0));
+      System.out.println(""+ makeAllSums(3));
+      System.out.println(""+ makeAllSums(4));
+      //System.out.println(""+ makeAllSums(100));
+    }
+*/
 }
